@@ -29,6 +29,7 @@ public class newService {
         int age = 18;
         String result;
 
+
         if (age < 5 ) {
             result =  "Balita";
         } else if (age > 6 && age <= 12) {
