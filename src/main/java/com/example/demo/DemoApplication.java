@@ -21,7 +21,6 @@ public class DemoApplication {
 		listPayment.add("BCA");
 		listPayment.add("Gopay");
 
-
 		String briPayment = listPayment.stream().filter(payment -> payment.equals("BRI")).findAny().orElse(null);
 
 		if (test) {
