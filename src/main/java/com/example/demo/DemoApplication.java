@@ -7,7 +7,18 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class DemoApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(DemoApplication.class, args);
+		Boolean test = testBoolean();
+
+		if (test) {
+			System.out.println("test");
+		}
+
 	}
+
+	private static Boolean testBoolean () {
+		return false;
+	}
+
+
 
 }
