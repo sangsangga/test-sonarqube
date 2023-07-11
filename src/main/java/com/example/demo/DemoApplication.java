@@ -24,6 +24,7 @@ public class DemoApplication {
 
 
 		int number = Integer.parseInt("23");
+		System.out.println(number);
 
 		if (paymentBca.equals(PaymentEnum.BCA)) {
 			System.out.println("benar");
@@ -32,6 +33,10 @@ public class DemoApplication {
 		Boolean listEmpty = emptyList.isEmpty();
 		Boolean listEmptyUtil = CollectionUtils.isEmpty(emptyList);
 		Boolean isEmptyString = StringUtils.isEmpty(WrongVariableName);
+
+		System.out.println(listEmptyUtil);
+		System.out.println(listEmpty);
+		System.out.println(isEmptyString);
 	}
 
 	private static Boolean testBoolean () {
