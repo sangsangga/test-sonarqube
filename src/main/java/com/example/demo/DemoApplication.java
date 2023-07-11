@@ -17,6 +17,12 @@ public class DemoApplication {
 		String paymentBca = "BCA";
 		String WrongVariableName = "";
 		List<Integer> emptyList = new ArrayList<>();
+		List<String> listPayment = new ArrayList<>();
+		listPayment.add("BCA");
+		listPayment.add("Gopay");
+
+
+		String briPayment = listPayment.stream().filter(payment -> payment.equals("BRI")).findAny().orElse(null);
 
 		if (test) {
 			System.out.println("test");
@@ -24,7 +30,9 @@ public class DemoApplication {
 
 
 		int number = Integer.parseInt("23");
+		boolean startsWithTest = briPayment.startsWith("a") ;
 		System.out.println(number);
+		System.out.println(startsWithTest);
 
 		if (paymentBca.equals(PaymentEnum.BCA)) {
 			System.out.println("benar");
@@ -41,6 +49,16 @@ public class DemoApplication {
 
 	private static Boolean testBoolean () {
 		return false;
+	}
+
+	private static Boolean testBooleanNull () {
+		int number = 1;
+
+		if (number == 2) {
+			return true;
+		}
+
+		return null;
 	}
 
 }
