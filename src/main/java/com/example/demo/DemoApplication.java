@@ -59,4 +59,9 @@ public class DemoApplication {
 		return null;
 	}
 
+	private static Boolean haha () {
+		return false;
+	}
+
+
 }

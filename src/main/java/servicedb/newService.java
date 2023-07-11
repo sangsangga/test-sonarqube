@@ -18,6 +18,10 @@ public class newService {
         return "SMA";
     }
 
+    private static Boolean testBoolean () {
+        return false;
+    }
+
     public String myAgeNotReturnEarly () {
         int age = 18;
         String result;
