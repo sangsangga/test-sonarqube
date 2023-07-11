@@ -8,6 +8,14 @@ plugins {
 group = 'com.example'
 version = '0.0.1-SNAPSHOT'
 
+sonar {
+	properties {
+		property "sonar.projectKey", "sangsangga_test-sonarqube"
+		property "sonar.organization", "sangsangga"
+		property "sonar.host.url", "https://sonarcloud.io"
+	}
+}
+
 java {
 	sourceCompatibility = '11'
 }
@@ -23,12 +31,4 @@ dependencies {
 
 tasks.named('test') {
 	useJUnitPlatform()
-}
-
-sonar {
-	properties {
-		property "sonar.projectKey", "sangsangga_test-sonarqube"
-		property "sonar.organization", "sangsangga"
-		property "sonar.host", "https://sonarcloud.io"
-	}
 }
