@@ -14,16 +14,24 @@ public class DemoApplication {
 
 	public static void main(String[] args) {
 		Boolean test = testBoolean();
+		Boolean boxBoolean = testBoolean();
 		List<Integer> emptyList = new ArrayList<>();
+		List<Integer> nullList;
 		String paymentBca = "BCA";
 		String nullString = null;
+
+		List<String> listPayment = new ArrayList<>();
+		listPayment.add("BCA");
+		listPayment.add("Gopay");
+
+		String briPayment = listPayment.stream().filter(payment -> payment.equals("BRI")).findAny().orElse(null);
+
 
 		//naming - variable
 		String WrongVariableName = "";
 
 		// constant on left
-		Boolean constantLeft = paymentBca.equals(PaymentEnum.BCA);
-
+		Boolean constantLeft = briPayment.equals(PaymentEnum.BCA);
 
 		// use stringUtils
 		Boolean isEmptyStringUtil = StringUtils.isEmpty(WrongVariableName);
@@ -34,6 +42,8 @@ public class DemoApplication {
 		Boolean listEmpty = emptyList.isEmpty();
 		Boolean listEmptyUtil = CollectionUtils.isEmpty(emptyList);
 
+
+		// magic number
 		for(int i = 0; i < 5 ; i++){
 			System.out.println(i);
 		}
@@ -42,6 +52,18 @@ public class DemoApplication {
 		if (test) {
 			System.out.println("test");
 		}
+
+		if (boxBoolean) {
+			System.out.println("123");
+		}
+
+		System.out.println(isEmptyStringNull);
+		System.out.println(isEmptyStringUtil);
+		System.out.println(isEmptyStringNull);
+		System.out.println(isEmptyString);
+		System.out.println(constantLeft);
+		System.out.println(listEmpty);
+		System.out.println(listEmptyUtil);
 
 	}
 
