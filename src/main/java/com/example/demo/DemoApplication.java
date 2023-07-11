@@ -65,4 +65,18 @@ public class DemoApplication {
 	}
 
 
+	public String mySchool () {
+		int age = 18;
+
+		if (age < 5 ) {
+			return "Balita";
+		} else if (age > 6 && age <= 12) {
+			return "SD";
+		} else if (age > 12 && age < 15) {
+			return "SMP";
+		}
+		return "SMA";
+	}
+
+
 }
