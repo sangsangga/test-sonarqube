@@ -20,5 +20,8 @@ public class DemoApplication {
 	}
 
 
+	private static Boolean testBooleanNull () {
+		return null;
+	}
 
 }
