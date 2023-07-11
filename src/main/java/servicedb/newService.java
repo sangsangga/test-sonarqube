@@ -38,4 +38,8 @@ public class newService {
 
         return result;
     }
+
+    private void printTest() {
+        System.out.println(testBoolean());
+    }
 }

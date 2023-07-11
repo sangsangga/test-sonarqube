@@ -32,6 +32,7 @@ public class DemoApplication {
 		boolean startsWithTest = briPayment.startsWith("a") ;
 		System.out.println(number);
 		System.out.println(startsWithTest);
+		System.out.println(testBooleanNull());
 
 		if (paymentBca.equals(PaymentEnum.BCA)) {
 			System.out.println("benar");
