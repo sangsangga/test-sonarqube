@@ -53,7 +53,6 @@ public class DemoApplication {
 
 	private static Boolean testBooleanNull () {
 		int number = 1;
-
 		if (number == 2) {
 			return true;
 		}
