@@ -16,28 +16,19 @@ public class DemoApplication {
 
 
 	public static void main(String[] args) {
-		MagicNumber magicNumber = new MagicNumber();
 		String nullString = null;
 		String myString = null;
+		String unUsed = "test";
 
-		List<String> listPayment = new ArrayList<>();
-		listPayment.add("BCA");
-		listPayment.add("Gopay");
-
-
-		magicNumber.testMagicNumber();
-
-		String briPayment = listPayment.stream().filter(payment -> payment.equals("BRI")).findAny().orElse(null);
-		System.out.println();
+		//deprecated code can't be used
+		String name = getMyName();
 
 
+		//String literal on the left
 		System.out.println("Equal? " + myString.equals("foo"));
 
 		//naming - variable
 		String WrongVariableName = "";
-
-		// constant on left
-		Boolean constantLeft = briPayment.equals(PaymentEnum.BCA);
 
 		// use stringUtils
 		Boolean isEmptyStringUtil = StringUtils.isEmpty(WrongVariableName);
@@ -46,8 +37,9 @@ public class DemoApplication {
 
 
 		// magic number
-		double radius = 20;
-		double circle = 3.14 * radius;
+		for (int i = 0; i< 4; i++) {
+			System.out.println(i);
+		}
 
 		// boxing boolean
 		Boolean test = testBoolean();
@@ -59,8 +51,7 @@ public class DemoApplication {
 		System.out.println(isEmptyStringUtil);
 		System.out.println(isEmptyStringNull);
 		System.out.println(isEmptyString);
-		System.out.println(constantLeft);
-		printMyName();
+		System.out.println(name);
 
 
 
@@ -97,8 +88,8 @@ public class DemoApplication {
 	}
 
 	@Deprecated
-	public static void printMyName () {
-		System.out.println("MyName");
+	public static String getMyName () {
+		return "MyName";
 	}
 
 
