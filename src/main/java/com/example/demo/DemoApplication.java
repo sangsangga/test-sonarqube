@@ -5,6 +5,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.util.CollectionUtils;
 import org.springframework.util.StringUtils;
+import servicedb.MagicNumber;
+import servicedb.newService;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,20 +14,24 @@ import java.util.List;
 @SpringBootApplication
 public class DemoApplication {
 
+
 	public static void main(String[] args) {
-		Boolean test = testBoolean();
-		Boolean boxBoolean = testBoolean();
-		List<Integer> emptyList = new ArrayList<>();
-		List<Integer> nullList;
-		String paymentBca = "BCA";
+		MagicNumber magicNumber = new MagicNumber();
 		String nullString = null;
+		String myString = null;
 
 		List<String> listPayment = new ArrayList<>();
 		listPayment.add("BCA");
 		listPayment.add("Gopay");
 
-		String briPayment = listPayment.stream().filter(payment -> payment.equals("BRI")).findAny().orElse(null);
 
+		magicNumber.testMagicNumber();
+
+		String briPayment = listPayment.stream().filter(payment -> payment.equals("BRI")).findAny().orElse(null);
+		System.out.println();
+
+
+		System.out.println("Equal? " + myString.equals("foo"));
 
 		//naming - variable
 		String WrongVariableName = "";
@@ -38,23 +44,15 @@ public class DemoApplication {
 		Boolean isEmptyString = WrongVariableName.isEmpty();
 		Boolean isEmptyStringNull = nullString.isEmpty();
 
-		// use empty collection
-		Boolean listEmpty = emptyList.isEmpty();
-		Boolean listEmptyUtil = CollectionUtils.isEmpty(emptyList);
-
 
 		// magic number
-		for(int i = 0; i < 5 ; i++){
-			System.out.println(i);
-		}
+		double radius = 20;
+		double circle = 3.14 * radius;
 
-
+		// boxing boolean
+		Boolean test = testBoolean();
 		if (test) {
 			System.out.println("test");
-		}
-
-		if (boxBoolean) {
-			System.out.println("123");
 		}
 
 		System.out.println(isEmptyStringNull);
@@ -62,8 +60,10 @@ public class DemoApplication {
 		System.out.println(isEmptyStringNull);
 		System.out.println(isEmptyString);
 		System.out.println(constantLeft);
-		System.out.println(listEmpty);
-		System.out.println(listEmptyUtil);
+		printMyName();
+
+
+
 
 	}
 
@@ -82,6 +82,8 @@ public class DemoApplication {
 		}
 		return "SMA";
 	}
+
+	//code duplication
 	public String myAge () {
 		int age = 18;
 		if (age < 5 ) {
@@ -93,6 +95,12 @@ public class DemoApplication {
 		}
 		return "SMA";
 	}
+
+	@Deprecated
+	public static void printMyName () {
+		System.out.println("MyName");
+	}
+
 
 
 
