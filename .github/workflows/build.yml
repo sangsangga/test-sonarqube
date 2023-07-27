@@ -8,8 +8,8 @@ on:
       - 'main'
     types: [opened, synchronize, reopened]
 jobs:
-  build:
-    name: Build and analyze
+  setup:
+    name: Setup
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -19,7 +19,11 @@ jobs:
         uses: actions/setup-java@v3
         with:
           java-version: 11
-          distribution: 'zulu' # Alternative distribution options are available
+          distribution: 'zulu' # Alternative distribution options are available;
+  build:
+    name: PMD
+    runs-on: ubuntu-latest
+    steps:
       - uses: pmd/pmd-github-action@v1
         id: pmd
         with:
