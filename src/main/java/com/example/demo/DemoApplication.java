@@ -43,7 +43,7 @@ public class DemoApplication {
 
 		// boxing boolean
 		Boolean test = testBoolean();
-		if (test) {
+		if (Boolean.TRUE.equals(test)) {
 			System.out.println("test");
 		}
 

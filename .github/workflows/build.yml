@@ -1,9 +1,11 @@
-name: SonarCloud
+name: Spring Linter
 on:
   push:
     branches:
-      - main
+      - master
   pull_request:
+    branches:
+      - 'master'
     types: [opened, synchronize, reopened]
 jobs:
   build:
@@ -18,20 +20,11 @@ jobs:
         with:
           java-version: 11
           distribution: 'zulu' # Alternative distribution options are available
-      - name: Cache SonarCloud packages
-        uses: actions/cache@v3
+      - uses: pmd/pmd-github-action@v1
+        id: pmd
         with:
-          path: ~/.sonar/cache
-          key: ${{ runner.os }}-sonar
-          restore-keys: ${{ runner.os }}-sonar
-      - name: Cache Gradle packages
-        uses: actions/cache@v3
-        with:
-          path: ~/.gradle/caches
-          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle') }}
-          restore-keys: ${{ runner.os }}-gradle
-      - name: Build and analyze
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-        run: ./gradlew build sonar --info
+          version: '6.40.0'
+          rulesets: 'ruleset.xml'
+      - name: Fail build if there are violations
+        if: ${{ steps.pmd.outputs.violations != 0 }}
+        run: exit 1
