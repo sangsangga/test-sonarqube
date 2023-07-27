@@ -2,10 +2,10 @@ name: Spring Linter
 on:
   push:
     branches:
-      - master
+      - main
   pull_request:
     branches:
-      - 'master'
+      - 'main'
     types: [opened, synchronize, reopened]
 jobs:
   build:
