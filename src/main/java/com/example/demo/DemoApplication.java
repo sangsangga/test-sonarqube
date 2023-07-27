@@ -62,6 +62,7 @@ public class DemoApplication {
 		return false;
 	}
 
+	@IdClass
 	public String mySchool () {
 		int age = 18;
 		if (age < 5 ) {
@@ -75,6 +76,7 @@ public class DemoApplication {
 	}
 
 	//code duplication
+	@OneToOne
 	public String myAge () {
 		int age = 18;
 		if (age < 5 ) {

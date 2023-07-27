@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+
+<ruleset name="Custom Rules"
+         xmlns="http://pmd.sourceforge.net/ruleset/2.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 https://pmd.sourceforge.io/ruleset_2_0_0.xsd">
+
+    <description>
+        My custom rules
+    </description>
+
+
+    <!-- Your rules will come here -->
+    <rule name="Using OneToOne"
+          language="java"
+          message="Use of OneToOne Annotation Detected"
+          class="net.sourceforge.pmd.lang.rule.XPathRule" >
+        <description>
+            Forbidden Code
+        </description>
+        <priority>3</priority>
+        <properties>
+            <property name="xpath">
+                <value>
+                    <![CDATA[
+//Annotation[*/Name/@Image = 'OneToOne']
+]]>
+                </value>
+            </property>
+        </properties>
+    </rule>
+
+    <rule name="Using IdClass"
+          language="java"
+          message="Use of IdClass Annotation Detected"
+          class="net.sourceforge.pmd.lang.rule.XPathRule" >
+        <description>
+            Forbidden Code
+        </description>
+        <priority>3</priority>
+        <properties>
+            <property name="xpath">
+                <value>
+                    <![CDATA[
+//Annotation[*/Name/@Image = 'IdClass']
+]]>
+                </value>
+            </property>
+        </properties>
+    </rule>
+
+
+</ruleset>
