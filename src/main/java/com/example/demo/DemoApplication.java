@@ -89,6 +89,7 @@ public class DemoApplication {
 		return "SMA";
 	}
 
+	@Lock(LockModeType.PESSIMISTIC_READ)
 	@Deprecated
 	public static String getMyName () {
 		return "MyName";
