@@ -25,7 +25,7 @@ jobs:
         id: pmd
         with:
           version: '6.40.0'
-          rulesets: '.github/linter/ruleset.xml'
+          rulesets: 'ruleset.xml'
       - name: Forbidden Code Linter Checker
         if: ${{ steps.pmd.outputs.violations != 0 }}
         run: exit 1
