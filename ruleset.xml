@@ -61,7 +61,7 @@
             <property name="xpath">
                 <value>
                     <![CDATA[
-//Annotation[*/Name/@Image = 'Lock' and .//./FieldAccess/@Image = 'PESSIMISTIC_WRITE']
+//Annotation[*/Name/@Image = 'Lock' and .//MemberValuePair/FieldAccess/@Image = 'PESSIMISTIC_WRITE']
 ]]>
                 </value>
             </property>
