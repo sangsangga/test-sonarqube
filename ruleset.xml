@@ -61,7 +61,7 @@
             <property name="xpath">
                 <value>
                     <![CDATA[
-//FieldAccess[@Image = 'PESSIMISTIC_WRITE']
+//FieldAccess[*/Name/@Image = 'PESSIMISTIC_WRITE']
 ]]>
                 </value>
             </property>
