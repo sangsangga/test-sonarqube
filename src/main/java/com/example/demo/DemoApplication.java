@@ -76,7 +76,7 @@ public class DemoApplication {
 	}
 
 	//code duplication
-	@Lock
+	@Lock(LockModeType.PESSIMISTIC_WRITE)
 	public String myAge () {
 		int age = 18;
 		if (age < 5 ) {
