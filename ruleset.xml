@@ -51,7 +51,7 @@
 
     <rule name="Using Pesimistic Write"
           language="java"
-          message="Use of IdClass Annotation Detected"
+          message="Use of Lock Pesimistic Write Annotation Detected"
           class="net.sourceforge.pmd.lang.rule.XPathRule" >
         <description>
             Forbidden Code
@@ -61,7 +61,7 @@
             <property name="xpath">
                 <value>
                     <![CDATA[
-//Annotation[*/Name/@Image = 'Lock']
+//Annotation[*/Name/@Image = 'Lock' and and not(.//MemberValuePair/@Image = 'message')]
 ]]>
                 </value>
             </property>
