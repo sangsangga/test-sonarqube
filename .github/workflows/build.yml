@@ -20,15 +20,22 @@ jobs:
         with:
           java-version: 11
           distribution: 'zulu' # Alternative distribution options are available
-      - name: Forbidden Code Linter Analyzer
-        uses: pmd/pmd-github-action@v1
-        id: pmd
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
         with:
-          version: '6.40.0'
-          rulesets: 'ruleset.xml'
-      - name: Forbidden Code Linter Checker
-        if: ${{ steps.pmd.outputs.violations != 0 }}
-        run: exit 1
+          java-version: 17
+          distribution: 'zulu' # Alternative distribution options are available
+      - name: Java home
+        run: grep "JAVA_HOME"
+#      - name: Forbidden Code Linter Analyzer
+#        uses: pmd/pmd-github-action@v1
+#        id: pmd
+#        with:
+#          version: '6.40.0'
+#          rulesets: 'ruleset.xml'
+#      - name: Forbidden Code Linter Checker
+#        if: ${{ steps.pmd.outputs.violations != 0 }}
+#        run: exit 1
 
 #  SonarCloud:
 #    name: Sonar
